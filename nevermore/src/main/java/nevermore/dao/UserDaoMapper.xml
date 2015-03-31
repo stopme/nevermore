@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="nevermore.dao.UserDao">
+	
+
+	<select id="findUserByID"  resultType="nevermore.dto.User">
+		select 
+			user_id,
+			user_name,
+			login_password
+		from 
+			SYS_USER 
+		where 
+		  	user_id = #{id}
+	</select>
+	
+	<select id="findUserByUsername"  resultType="nevermore.dto.User">
+		select 
+			user_id,
+			user_name,
+			login_password
+		from 
+			sys_user 
+		where 
+		  	user_name = #{user_name}
+	</select>
+</mapper>
