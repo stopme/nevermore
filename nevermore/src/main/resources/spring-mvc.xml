@@ -11,10 +11,6 @@
         http://www.springframework.org/schema/mvc
         http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
         
-     <!--
-		放在mvc:annotation-driven之前 否则@ResponseBody 返回中文乱码及json *Could not find
-		acceptable representation*
-	-->
 	<context:component-scan base-package="nevermore"/>
 	<mvc:annotation-driven>
 		<mvc:message-converters register-defaults="true">
@@ -55,7 +51,7 @@
           p:order="1">
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
         <property name="contentType" value="text/html"/>
-        <property name="prefix" value="/WEB-INF/pages/"/>
+        <property name="prefix" value="/WEB-INF/views/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
 	
